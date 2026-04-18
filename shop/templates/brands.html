@@ -1,0 +1,17 @@
+<div class="dropdown is-hoverable my-4">
+    <div class="dropdown-trigger">
+        <a class="navbar-item has-text-dark" aria-haspopup="true" aria-controls="dropdown-menu">
+            Choose brand
+        </a>
+    </div>
+    <div class="dropdown-menu" id="dropdown-menu" role="menu">
+        <div class="dropdown-content">
+            {% for brand in brands %}
+                <a href="{% url 'shop:product_list' %}?brand={{ brand.pk }}" class="dropdown-item">
+                    {{ brand }}
+                </a>
+                <br>
+            {% endfor %}
+        </div>
+    </div>
+</div>
